@@ -12,6 +12,10 @@
 		54EE1C651C2199C4008DD2E5 /* CryptoSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE1C621C2199B2008DD2E5 /* CryptoSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54EE1C661C2199C8008DD2E5 /* CryptoSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE1C621C2199B2008DD2E5 /* CryptoSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		674A736F1BF5D85B00866C5B /* RabbitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A736E1BF5D85B00866C5B /* RabbitTests.swift */; };
+		750D3ACB1D0EADCA00999299 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D3ACA1D0EADCA00999299 /* ZeroPadding.swift */; };
+		750D3ACC1D0EADCA00999299 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D3ACA1D0EADCA00999299 /* ZeroPadding.swift */; };
+		750D3ACD1D0EADCA00999299 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D3ACA1D0EADCA00999299 /* ZeroPadding.swift */; };
+		750D3ACE1D0EADCA00999299 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D3ACA1D0EADCA00999299 /* ZeroPadding.swift */; };
 		75100F8F19B0BC890005C5F5 /* Poly1305Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75100F8E19B0BC890005C5F5 /* Poly1305Tests.swift */; };
 		753881EB1CB06E390089101D /* NoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753881EA1CB06E390089101D /* NoPadding.swift */; };
 		753881EC1CB06E390089101D /* NoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753881EA1CB06E390089101D /* NoPadding.swift */; };
@@ -44,18 +48,14 @@
 		757BC8FF1C1CA56A0093AAA9 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F71C1CA56A0093AAA9 /* AES+Foundation.swift */; };
 		757BC9001C1CA56A0093AAA9 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F71C1CA56A0093AAA9 /* AES+Foundation.swift */; };
 		757BC9011C1CA56A0093AAA9 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F71C1CA56A0093AAA9 /* AES+Foundation.swift */; };
-		757BC9021C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F81C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift */; };
-		757BC9031C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F81C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift */; };
-		757BC9041C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F81C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift */; };
-		757BC9051C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F81C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift */; };
 		757BC9061C1CA56A0093AAA9 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F91C1CA56A0093AAA9 /* ChaCha20+Foundation.swift */; };
 		757BC9071C1CA56A0093AAA9 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F91C1CA56A0093AAA9 /* ChaCha20+Foundation.swift */; };
 		757BC9081C1CA56A0093AAA9 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F91C1CA56A0093AAA9 /* ChaCha20+Foundation.swift */; };
 		757BC9091C1CA56A0093AAA9 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8F91C1CA56A0093AAA9 /* ChaCha20+Foundation.swift */; };
-		757BC90A1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* NSData+Extension.swift */; };
-		757BC90B1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* NSData+Extension.swift */; };
-		757BC90C1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* NSData+Extension.swift */; };
-		757BC90D1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* NSData+Extension.swift */; };
+		757BC90A1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* Data+Extension.swift */; };
+		757BC90B1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* Data+Extension.swift */; };
+		757BC90C1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* Data+Extension.swift */; };
+		757BC90D1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FA1C1CA56A0093AAA9 /* Data+Extension.swift */; };
 		757BC90E1C1CA56A0093AAA9 /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FB1C1CA56A0093AAA9 /* Rabbit+Foundation.swift */; };
 		757BC90F1C1CA56A0093AAA9 /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FB1C1CA56A0093AAA9 /* Rabbit+Foundation.swift */; };
 		757BC9101C1CA56A0093AAA9 /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757BC8FB1C1CA56A0093AAA9 /* Rabbit+Foundation.swift */; };
@@ -331,6 +331,7 @@
 		54EE1C621C2199B2008DD2E5 /* CryptoSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CryptoSwift.h; path = Sources/CryptoSwift.h; sourceTree = SOURCE_ROOT; };
 		5596BDBB1BC8F220007E38D5 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		674A736E1BF5D85B00866C5B /* RabbitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RabbitTests.swift; sourceTree = "<group>"; };
+		750D3ACA1D0EADCA00999299 /* ZeroPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZeroPadding.swift; path = Sources/CryptoSwift/ZeroPadding.swift; sourceTree = SOURCE_ROOT; };
 		75100F8E19B0BC890005C5F5 /* Poly1305Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poly1305Tests.swift; sourceTree = "<group>"; };
 		753881EA1CB06E390089101D /* NoPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoPadding.swift; path = Sources/CryptoSwift/NoPadding.swift; sourceTree = SOURCE_ROOT; };
 		75482EA31CB310B7001F66A5 /* PBKDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBKDF.swift; sourceTree = "<group>"; };
@@ -347,9 +348,8 @@
 		756BFDCA1A82B87300B9D9A4 /* Bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		7574E5FD1CD02C8B00E96346 /* CSArrayType+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CSArrayType+Foundation.swift"; sourceTree = "<group>"; };
 		757BC8F71C1CA56A0093AAA9 /* AES+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AES+Foundation.swift"; sourceTree = "<group>"; };
-		757BC8F81C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArrayUInt8+Foundation.swift"; sourceTree = "<group>"; };
 		757BC8F91C1CA56A0093AAA9 /* ChaCha20+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChaCha20+Foundation.swift"; sourceTree = "<group>"; };
-		757BC8FA1C1CA56A0093AAA9 /* NSData+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Extension.swift"; sourceTree = "<group>"; };
+		757BC8FA1C1CA56A0093AAA9 /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		757BC8FB1C1CA56A0093AAA9 /* Rabbit+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rabbit+Foundation.swift"; sourceTree = "<group>"; };
 		757BC8FC1C1CA56A0093AAA9 /* String+FoundationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FoundationExtension.swift"; sourceTree = "<group>"; };
 		757BC8FD1C1CA56A0093AAA9 /* Utils+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Utils+Foundation.swift"; sourceTree = "<group>"; };
@@ -504,7 +504,6 @@
 				757BC9281C1CA5790093AAA9 /* HashProtocol.swift */,
 				757BC9291C1CA5790093AAA9 /* HMAC.swift */,
 				757BC92B1C1CA5790093AAA9 /* IntegerConvertible.swift */,
-				757BC92C1C1CA5790093AAA9 /* IntExtension.swift */,
 				757BC92D1C1CA5790093AAA9 /* MD5.swift */,
 				757BC92E1C1CA5790093AAA9 /* Multiplatform.swift */,
 				757BC92F1C1CA5790093AAA9 /* Operators.swift */,
@@ -512,10 +511,12 @@
 				75482EA51CB3299E001F66A5 /* PKCS5 */,
 				757BC9321C1CA5790093AAA9 /* PKCS7.swift */,
 				753881EA1CB06E390089101D /* NoPadding.swift */,
+				750D3ACA1D0EADCA00999299 /* ZeroPadding.swift */,
 				757BC9331C1CA5790093AAA9 /* Poly1305.swift */,
 				757BC9351C1CA5790093AAA9 /* SHA1.swift */,
 				757BC9361C1CA5790093AAA9 /* SHA2.swift */,
 				757BC9371C1CA5790093AAA9 /* String+Extension.swift */,
+				757BC92C1C1CA5790093AAA9 /* IntExtension.swift */,
 				757BC9381C1CA5790093AAA9 /* UInt8Extension.swift */,
 				757BC9391C1CA5790093AAA9 /* UInt32Extension.swift */,
 				757BC93A1C1CA5790093AAA9 /* UInt64Extension.swift */,
@@ -566,9 +567,8 @@
 			isa = PBXGroup;
 			children = (
 				757BC8F71C1CA56A0093AAA9 /* AES+Foundation.swift */,
-				757BC8F81C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift */,
 				757BC8F91C1CA56A0093AAA9 /* ChaCha20+Foundation.swift */,
-				757BC8FA1C1CA56A0093AAA9 /* NSData+Extension.swift */,
+				757BC8FA1C1CA56A0093AAA9 /* Data+Extension.swift */,
 				757BC8FB1C1CA56A0093AAA9 /* Rabbit+Foundation.swift */,
 				757BC8FC1C1CA56A0093AAA9 /* String+FoundationExtension.swift */,
 				757BC8FD1C1CA56A0093AAA9 /* Utils+Foundation.swift */,
@@ -751,7 +751,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Marcin Krzyzanowski";
 				TargetAttributes = {
 					5596BDBA1BC8F220007E38D5 = {
@@ -844,6 +844,7 @@
 				75CB934A1C8F60700087740D /* ECB.swift in Sources */,
 				757F440F1CC1822B002B1F85 /* SecureBytes.swift in Sources */,
 				757BC9751C1CA5790093AAA9 /* HashProtocol.swift in Sources */,
+				750D3ACC1D0EADCA00999299 /* ZeroPadding.swift in Sources */,
 				757BC9071C1CA56A0093AAA9 /* ChaCha20+Foundation.swift in Sources */,
 				75D0E05D1CFB9B9400FCEA0E /* Cipher.swift in Sources */,
 				757BC9851C1CA5790093AAA9 /* IntExtension.swift in Sources */,
@@ -884,10 +885,9 @@
 				757BC9951C1CA5790093AAA9 /* Padding.swift in Sources */,
 				80545D141CA9FECD00474A99 /* Bit.swift in Sources */,
 				757BC9A51C1CA5790093AAA9 /* Rabbit.swift in Sources */,
-				757BC90B1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */,
+				757BC90B1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */,
 				757BC9791C1CA5790093AAA9 /* HMAC.swift in Sources */,
 				75482EAD1CB329DF001F66A5 /* PKCS5.swift in Sources */,
-				757BC9031C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,6 +906,7 @@
 				75CB93491C8F60700087740D /* ECB.swift in Sources */,
 				757F440E1CC1822B002B1F85 /* SecureBytes.swift in Sources */,
 				757BC9741C1CA5790093AAA9 /* HashProtocol.swift in Sources */,
+				750D3ACB1D0EADCA00999299 /* ZeroPadding.swift in Sources */,
 				757BC90E1C1CA56A0093AAA9 /* Rabbit+Foundation.swift in Sources */,
 				75D0E05C1CFB9B9400FCEA0E /* Cipher.swift in Sources */,
 				757BC9841C1CA5790093AAA9 /* IntExtension.swift in Sources */,
@@ -946,10 +947,9 @@
 				757BC9941C1CA5790093AAA9 /* Padding.swift in Sources */,
 				80545D131CA9FECD00474A99 /* Bit.swift in Sources */,
 				757BC9A41C1CA5790093AAA9 /* Rabbit.swift in Sources */,
-				757BC9021C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */,
 				757BC9781C1CA5790093AAA9 /* HMAC.swift in Sources */,
 				75482EAC1CB329DF001F66A5 /* PKCS5.swift in Sources */,
-				757BC90A1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */,
+				757BC90A1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,6 +985,7 @@
 				75CB934B1C8F60700087740D /* ECB.swift in Sources */,
 				757F44111CC1822B002B1F85 /* SecureBytes.swift in Sources */,
 				757BC9761C1CA5790093AAA9 /* HashProtocol.swift in Sources */,
+				750D3ACE1D0EADCA00999299 /* ZeroPadding.swift in Sources */,
 				757BC9101C1CA56A0093AAA9 /* Rabbit+Foundation.swift in Sources */,
 				75D0E05F1CFB9B9400FCEA0E /* Cipher.swift in Sources */,
 				757BC9861C1CA5790093AAA9 /* IntExtension.swift in Sources */,
@@ -1025,10 +1026,9 @@
 				757BC9961C1CA5790093AAA9 /* Padding.swift in Sources */,
 				80545D161CA9FECD00474A99 /* Bit.swift in Sources */,
 				757BC9A61C1CA5790093AAA9 /* Rabbit.swift in Sources */,
-				757BC9041C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */,
 				757BC97A1C1CA5790093AAA9 /* HMAC.swift in Sources */,
 				75482EAF1CB329DF001F66A5 /* PKCS5.swift in Sources */,
-				757BC90C1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */,
+				757BC90C1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,6 +1047,7 @@
 				75CB934C1C8F60700087740D /* ECB.swift in Sources */,
 				757F44101CC1822B002B1F85 /* SecureBytes.swift in Sources */,
 				757BC9771C1CA5790093AAA9 /* HashProtocol.swift in Sources */,
+				750D3ACD1D0EADCA00999299 /* ZeroPadding.swift in Sources */,
 				757BC9091C1CA56A0093AAA9 /* ChaCha20+Foundation.swift in Sources */,
 				75D0E05E1CFB9B9400FCEA0E /* Cipher.swift in Sources */,
 				757BC9871C1CA5790093AAA9 /* IntExtension.swift in Sources */,
@@ -1087,10 +1088,9 @@
 				757BC9971C1CA5790093AAA9 /* Padding.swift in Sources */,
 				80545D151CA9FECD00474A99 /* Bit.swift in Sources */,
 				757BC9A71C1CA5790093AAA9 /* Rabbit.swift in Sources */,
-				757BC90D1C1CA56A0093AAA9 /* NSData+Extension.swift in Sources */,
+				757BC90D1C1CA56A0093AAA9 /* Data+Extension.swift in Sources */,
 				757BC97B1C1CA5790093AAA9 /* HMAC.swift in Sources */,
 				75482EAE1CB329DF001F66A5 /* PKCS5.swift in Sources */,
-				757BC9051C1CA56A0093AAA9 /* ArrayUInt8+Foundation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1173,6 +1173,7 @@
 				PRODUCT_NAME = CryptoSwift;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -1202,6 +1203,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1252,6 +1254,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1290,7 +1293,7 @@
 				PRODUCT_NAME = CryptoSwift;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1315,8 +1318,8 @@
 				PRODUCT_NAME = CryptoSwift;
 				SKIP_INSTALL = YES;
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 2.3;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1339,7 +1342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hakore.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = CryptoSwiftTests/Bridging.h;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1361,8 +1364,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = CryptoSwiftTests/Bridging.h;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 2.3;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1417,7 +1420,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -1470,7 +1473,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};

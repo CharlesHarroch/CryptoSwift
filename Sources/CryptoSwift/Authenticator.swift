@@ -11,8 +11,8 @@
 */
 public enum Authenticator {
     
-    public enum Error: ErrorType {
-        case AuthenticateError
+    public enum Error: ErrorProtocol {
+        case authenticateError
     }
     
     /**
@@ -28,16 +28,16 @@ public enum Authenticator {
     
     - returns: 16-byte message authentication code
     */
-    public func authenticate(message: Array<UInt8>) throws -> Array<UInt8> {
+    public func authenticate(_ bytes: Array<UInt8>) throws -> Array<UInt8> {
         switch (self) {
         case .Poly1305(let key):
-            guard let auth = CryptoSwift.Poly1305(key: key)?.authenticate(message) else {
-                throw Error.AuthenticateError
+            guard let auth = CryptoSwift.Poly1305(key: key)?.authenticate(bytes) else {
+                throw Error.authenticateError
             }
             return auth
         case .HMAC(let key, let variant):
-            guard let auth = CryptoSwift.HMAC(key: key, variant: variant)?.authenticate(message) else {
-                throw Error.AuthenticateError
+            guard let auth = CryptoSwift.HMAC(key: key, variant: variant)?.authenticate(bytes) else {
+                throw Error.authenticateError
             }
             return auth
         }

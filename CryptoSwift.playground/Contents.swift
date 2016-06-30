@@ -7,25 +7,33 @@ import CryptoSwift
 import Foundation
 import XCPlayground
 
-//: # AES
-//: One-time shot
+/*: 
+ # AES
+ ### One-time shot.
+ Encrypt all data at once.
+ */
 do {
-    let aes = try AES(key: "passwordpassword", iv: "drowssapdrowssap") // aes128
+    let aes = try AES(key: "passwordpassword", iv: "drowssapdrowssap")
     let ciphertext = try aes.encrypt("Nullam quis risus eget urna mollis ornare vel eu leo.".utf8.map({$0}))
     print(ciphertext.toHexString())
 } catch {
     print(error)
 }
 
-//: Incremental encryption
+/*:
+ ### Incremental encryption
+
+ Instantiate Encryptor for AES encryption (or decryptor for decryption) and process input data partially.
+ */
 do {
-    let aes = try AES(key: "passwordpassword", iv: "drowssapdrowssap") // aes128
-    var encryptor = aes.makeEncryptor()
+    var encryptor = try AES(key: "passwordpassword", iv: "drowssapdrowssap").makeEncryptor()
 
     var ciphertext = Array<UInt8>()
+    // aggregate partial results
     ciphertext += try encryptor.update(withBytes: "Nullam quis risus ".utf8.map({$0}))
     ciphertext += try encryptor.update(withBytes: "eget urna mollis ".utf8.map({$0}))
     ciphertext += try encryptor.update(withBytes: "ornare vel eu leo.".utf8.map({$0}))
+    // finish at the end
     ciphertext += try encryptor.finish()
 
     print(ciphertext.toHexString())
@@ -33,7 +41,9 @@ do {
     print(error)
 }
 
-//: Encrypt stream incrementally
+/*:
+ ### Encrypt stream
+ */
 do {
     // write until all is written
     func writeToStream(stream: NSOutputStream, bytes: Array<UInt8>) {
@@ -52,31 +62,31 @@ do {
     var encryptor = aes.makeEncryptor()
 
     // prepare streams
-    let data = NSData(bytes: (0..<100).map { $0 })
-    let inputStream = NSInputStream(data: data)
+    let data = Data(bytes: (0..<100).map { $0 })
+    let inputStream = InputStream(data: data)
     let outputStream = NSOutputStream(toMemory: ())
     inputStream.open()
     outputStream.open()
 
-    var buffer = Array<UInt8>(count: 2, repeatedValue: 0)
+    var buffer = Array<UInt8>(repeating: 0, count: 2)
 
     // encrypt input stream data and write encrypted result to output stream
     while (inputStream.hasBytesAvailable) {
         let readCount = inputStream.read(&buffer, maxLength: buffer.count)
         if (readCount > 0) {
             try encryptor.update(withBytes: Array(buffer[0..<readCount])) { (bytes) in
-                writeToStream(outputStream, bytes: bytes)
+                writeToStream(stream: outputStream, bytes: bytes)
             }
         }
     }
 
     // finalize encryption
     try encryptor.finish { (bytes) in
-        writeToStream(outputStream, bytes: bytes)
+        writeToStream(stream: outputStream, bytes: bytes)
     }
 
     // print result
-    if let ciphertext = outputStream.propertyForKey(NSStreamDataWrittenToMemoryStreamKey) as? NSData {
+    if let ciphertext = outputStream.property(forKey: Stream.PropertyKey.dataWrittenToMemoryStreamKey.rawValue) as? Data {
         print("Encrypted stream data: \(ciphertext.toHexString())")
     }
 

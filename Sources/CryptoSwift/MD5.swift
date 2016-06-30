@@ -49,14 +49,14 @@ final class MD5 : HashProtocol  {
         
         // Step 2. Append Length a 64-bit representation of lengthInBits
         let lengthInBits = (message.count * 8)
-        let lengthBytes = lengthInBits.bytes(64 / 8)
-        tmpMessage += lengthBytes.reverse()
+        let lengthBytes = lengthInBits.bytes(totalBytes: 64 / 8)
+        tmpMessage += lengthBytes.reversed()
 
         // Process the message in successive 512-bit chunks:
         let chunkSizeBytes = 512 / 8 // 64
         for chunk in BytesSequence(chunkSize: chunkSizeBytes, data: tmpMessage) {
             // break chunk into sixteen 32-bit words M[j], 0 ≤ j ≤ 15
-            var M = toUInt32Array(chunk)
+            var M = sliceToUInt32Array(chunk)
             assert(M.count == 16, "Invalid array")
             
             // Initialize hash value for this chunk:
@@ -95,7 +95,7 @@ final class MD5 : HashProtocol  {
                 dTemp = D
                 D = C
                 C = B
-                B = B &+ rotateLeft((A &+ F &+ k[j] &+ M[g]), s[j])
+                B = B &+ rotateLeft(A &+ F &+ k[j] &+ M[g], by: s[j])
                 A = dTemp    
             }
             

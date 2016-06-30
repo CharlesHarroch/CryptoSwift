@@ -210,64 +210,25 @@ final class AESTests: XCTestCase {
         XCTAssertEqual(decrypted, plaintext, "decryption failed")
     }
 
-    func testAES_encrypt_performance() {
-        let key:Array<UInt8> = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c];
-        let iv:Array<UInt8> = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F]
-        let message = Array<UInt8>(count: 1024 * 1024, repeatedValue: 7)
-        let aes = try! AES(key: key, iv: iv, blockMode: .CBC, padding: PKCS7())
-        measureMetrics([XCTPerformanceMetric_WallClockTime], automaticallyStartMeasuring: true, forBlock: { () -> Void in
-            try! aes.encrypt(message)
-        })
-    }
-
-    func testAES_decrypt_performance() {
-        let key:Array<UInt8> = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c];
-        let iv:Array<UInt8> = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F]
-        let message = Array<UInt8>(count: 1024 * 1024, repeatedValue: 7)
-        let aes = try! AES(key: key, iv: iv, blockMode: .CBC, padding: PKCS7())
-        measureMetrics([XCTPerformanceMetric_WallClockTime], automaticallyStartMeasuring: true, forBlock: { () -> Void in
-            try! aes.decrypt(message)
-        })
-    }
-
-    func testAESPerformanceCommonCrypto() {
-        let key:Array<UInt8> = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c];
-        let iv:Array<UInt8> = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F]
-        let message = Array<UInt8>(count: 1024 * 1024, repeatedValue: 7)
-        
-        measureMetrics([XCTPerformanceMetric_WallClockTime], automaticallyStartMeasuring: false, forBlock: { () -> Void in
-            let keyData     = NSData.withBytes(key)
-            let keyBytes    = UnsafePointer<Void>(keyData.bytes)
-            let ivData      = NSData.withBytes(iv)
-            let ivBytes     = UnsafePointer<Void>(ivData.bytes)
-            
-            let data = NSData.withBytes(message)
-            let dataLength    = data.length
-            let dataBytes     = UnsafePointer<Void>(data.bytes)
-            
-            let cryptData    = NSMutableData(length: Int(dataLength) + kCCBlockSizeAES128)
-            let cryptPointer = UnsafeMutablePointer<Void>(cryptData!.mutableBytes)
-            let cryptLength  = cryptData!.length
-            
-            var numBytesEncrypted:Int = 0
-            
-            self.startMeasuring()
-            
-            CCCrypt(
-                UInt32(kCCEncrypt),
-                UInt32(kCCAlgorithmAES128),
-                UInt32(kCCOptionPKCS7Padding),
-                keyBytes,
-                key.count,
-                ivBytes,
-                dataBytes,
-                dataLength,
-                cryptPointer, cryptLength,
-                &numBytesEncrypted)
-
-            self.stopMeasuring()
-        })
-    }
+//    func testAES_encrypt_performance() {
+//        let key:Array<UInt8> = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c];
+//        let iv:Array<UInt8> = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F]
+//        let message = Array<UInt8>(repeating: 7, count: 1024 * 1024)
+//        let aes = try! AES(key: key, iv: iv, blockMode: .CBC, padding: PKCS7())
+//        measureMetrics([XCTPerformanceMetric_WallClockTime], automaticallyStartMeasuring: true, for: { () -> Void in
+//            _ = try! aes.encrypt(message)
+//        })
+//    }
+//
+//    func testAES_decrypt_performance() {
+//        let key:Array<UInt8> = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c];
+//        let iv:Array<UInt8> = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F]
+//        let message = Array<UInt8>(repeating: 7, count: 1024 * 1024)
+//        let aes = try! AES(key: key, iv: iv, blockMode: .CBC, padding: PKCS7())
+//        measureMetrics([XCTPerformanceMetric_WallClockTime], automaticallyStartMeasuring: true, for: { () -> Void in
+//            _ = try! aes.decrypt(message)
+//        })
+//    }
 
     func testAESWithWrongKey() {
         let key:Array<UInt8> = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c];

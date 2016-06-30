@@ -9,31 +9,17 @@
 extension Array {
 
     /** split in chunks with given chunk size */
-    func chunks(chunksize:Int) -> [Array<Element>] {
+    func chunks(size chunksize: Int) -> [Array<Element>] {
         var words = Array<Array<Element>>()
-        words.reserveCapacity(self.count / chunksize)        
-        for idx in chunksize.stride(through: self.count, by: chunksize) {
-            let word = Array(self[idx - chunksize..<idx]) // this is slow for large table
-            words.append(word)
+        words.reserveCapacity(self.count / chunksize)
+        for idx in stride(from: chunksize, through: self.count, by: chunksize) {
+            words.append(Array(self[idx - chunksize..<idx])) // slow for large table
         }
-        let reminder = Array(self.suffix(self.count % chunksize))
+        let reminder = self.suffix(self.count % chunksize)
         if !reminder.isEmpty {
-            words.append(reminder)
+            words.append(Array(reminder))
         }
         return words
     }
-    
-    /*
-    This helper call is slow, therefore don't use it. It is due to extension, or due to optimization that can be done
-    
-    subscript(index: UInt32) -> Element {
-        get {
-            return self[Int(index)]
-        }
-        set {
-            self[Int(index)] = newValue
-        }
-    }
-    */
 }
 

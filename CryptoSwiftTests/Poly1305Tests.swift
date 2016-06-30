@@ -28,8 +28,8 @@ final class Poly1305Tests: XCTestCase {
         XCTAssertEqual(mac, expectedMac, "Invalid authentication result")
         
         // extensions
-        let msgData = NSData.withBytes(msg)
-        let mac2 = try! msgData.authenticate(Authenticator.Poly1305(key: key))
-        XCTAssertEqual(mac2, NSData.withBytes(expectedMac), "Invalid authentication result")
+        let msgData = Data(bytes: msg)
+        let mac2 = try! msgData.authenticate(with: Authenticator.Poly1305(key: key))
+        XCTAssertEqual(mac2, Data(bytes: expectedMac), "Invalid authentication result")
     }
 }
